@@ -1,13 +1,15 @@
 <?php
 
-class User{
+class User
+{
     // поля
     public string $username = 'qwerty';
     public string $password = '123456';
     public string $email = 'example@email.dot';
 
     // конструктор
-    public function __construct(string $name, string $pass, string $email) {
+    public function __construct(string $name, string $pass, string $email)
+    {
         try {
             $this->username = $name;
             $this->password = $pass;
@@ -17,13 +19,13 @@ class User{
             dataDisplay($this->password, "Пароль");
             dataDisplay($this->email, "Эл. почта");
         } catch (Exception $ex) {
-            echo "Что-то пошло не так. {$ex}";
+            echo ("Что-то пошло не так. {$ex}");
         }
-
     }
 
     // методы
-    public function changePass(string $old_pass, string $new_pass) {
+    public function changePass(string $old_pass, string $new_pass)
+    {
         if ($this->password === $old_pass) {
             switch (readline("Подтвердить изменение пароля? Y/N ")) {
                 case "Y":
@@ -33,13 +35,14 @@ class User{
                 case "N":
                     break;
                 default:
-                    echo(defaultAnswer());
+                    defaultAnswer();
             }
         } else {
-            echo(defaultAnswer());
+            defaultAnswer();
         }
     }
-    public function changeEmail(string $pass, $new_email) {
+    public function changeEmail(string $pass, $new_email)
+    {
         if ($this->password === $pass) {
             switch (readline("Подтвердить изменение эл. почты? Y/N ")) {
                 case "Y":
@@ -49,13 +52,11 @@ class User{
                 case "N":
                     break;
                 default:
-                    echo(defaultAnswer());
+                    defaultAnswer();
                     break;
             }
         } else {
-            echo(defaultAnswer());
+            defaultAnswer();
         }
     }
 }
-
-?>
