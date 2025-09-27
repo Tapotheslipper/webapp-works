@@ -52,7 +52,7 @@ switch (readline("Хотите начать повышать уровень? Y/N
             }
         }
         break;
-    case " N":
+    case "N":
         break;
     default:
         defaultAnswer();
