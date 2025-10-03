@@ -9,7 +9,8 @@ abstract class Notification
         $this->recipient = $recipient;
     }
 
-    abstract function send(string $message);
+    abstract function send(string $message): void;
+
     public function getRecipient()
     {
         return ($this->recipient);
@@ -23,7 +24,7 @@ class EmailNotification extends Notification
         parent::__construct($email);
     }
 
-    public function send(string $message)
+    public function send(string $message): void
     {
         echo ("Email sent to {$this->recipient}: {$message}");
     }
@@ -36,7 +37,7 @@ class SmsNotification extends Notification
         parent::__construct($phone_num);
     }
 
-    public function send(string $message)
+    public function send(string $message): void
     {
         echo ("SMS sent to {$this->recipient}: {$message}");
     }
