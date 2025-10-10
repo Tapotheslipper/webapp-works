@@ -1,15 +1,18 @@
 <?php
 
-function newLine() {
+function newLine()
+{
     echo("\n");
 }
 
-function defAn() {
+function defAn()
+{
     newLine();
     echo("Некорректный ввод.");
 }
 
-function displayData($data, string $tie) {
+function displayData($data, string $tie)
+{
     newLine();
     echo("{$tie}: ");
     if (is_array($data)) {
@@ -33,5 +36,3 @@ switch (readline("Какую программу запустить? (1 - Book, 2
         defAn();
         break;
 }
-
-
