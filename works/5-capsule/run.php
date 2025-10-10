@@ -1,46 +1,55 @@
 <?php
 
-class BankAccount {
+class BankAccount
+{
     private float $balance;
 
-    public function deposit(float $amount = 0) {
+    public function deposit(float $amount = 0)
+    {
         if (0 > $amount) {
             return;
         }
         $this->balance += $amount;
     }
-    public function withdraw(float $amount) {
+    public function withdraw(float $amount)
+    {
         if ($this->balance < $amount) {
             return;
         }
         $this->balance -= $amount;
         return $amount;
     }
-    public function getBalance() {
+    public function getBalance()
+    {
         return $this->balance;
     }
 }
 
-class Temperature {
+class Temperature
+{
     private float $celsius;
 
-    function __construct(float $temp = 0) {
+    public function __construct(float $temp = 0)
+    {
         if ($temp < -273.15) {
             return;
         }
         $this->celsius = $temp;
     }
 
-    public function setCelsius(float $value) {
+    public function setCelsius(float $value)
+    {
         if ($value < -273.15) {
             return;
         }
         $this->celsius = $value;
     }
-    public function getCelsius() {
+    public function getCelsius()
+    {
         return $this->celsius;
     }
-    public function getFahrenheit() {
+    public function getFahrenheit()
+    {
         return ($this->celsius * (9 / 5)) + 32;
     }
 }
