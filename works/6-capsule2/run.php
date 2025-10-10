@@ -21,7 +21,7 @@ class SecureWallet {
         $this->balance += $amount;
     }
 
-    public function withdraw(float $amount, string $pin): float {
+    public function withdraw(float $amount, string $pin) {
         if ($this->pin !== $pin || $amount > $this->balance) {
             throw new InvalidArgumentException("Отказано.");
             return;
@@ -31,7 +31,7 @@ class SecureWallet {
     }
 
     public function getBalance(string $pin) {
-        if ($this->pin !== $pin): float {
+        if ($this->pin !== $pin){
             throw new InvalidArgumentException("Отказано.");
             return;
         }
